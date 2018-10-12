@@ -27,15 +27,15 @@ def solve():
         texte = ligne
     fichier.close() ##création chaîne de caractère correspondant au contenu du fichier
     listenoms=texte.split(",") ##création liste des noms
-    
+    listenoms2=sorted(listenoms)
     
     alphabet='"ABCDEFGHIJKLMNOPQRSTUVWXYZ'  ##les guillemets " prendront la valeur 0
     somme = 0
     
-    for i in range(len(listenoms)):
+    for i in range(len(listenoms2)):
         sum =0      ##name score de chaque nom
         
-        for j in listenoms[i]:
+        for j in listenoms2[i]:
             sum+=alphabet.find(j)
         somme += sum*(i+1)    ##on somme les namescore multiplié par la position du nom dans la liste
     
